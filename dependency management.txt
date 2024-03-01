@@ -33,5 +33,11 @@
   - Check for security vulnerabilities (and PEP 508 requirements) in your environment: `pipenv check`
 
 For more details visit this link "https://realpython.com/pipenv-guide/"
-  
+
+**Other Tools for Application Dependency Management**
+1. poetry
+2. pip-tools
+3. PDM
+4. hatch
+5. micropipenv
   
