@@ -1,0 +1,32 @@
+**Creating Virtual Environments**
+
+Python "virtual environments" allow Python packages to be installed in isolation for an application, rather than being installed globally.
+This allow each application to have their own set of python packages inside a virtual environment. This helps in upgrading the packages for
+one application without affecting other applications. For example, a virtual environment can have Python version 3.8 installed and another one has Python version 3.10 installed 
+Also, virtual environments are useful to install packages where users are not allowed to update packages globally like on shared host.
+
+Virtual environments have their own installation directories and they don't share libraries with other virtual environments.
+
+*Common tools to install virtual environment*
+1. venv
+  - venv is available by default in Python 3.3 and later
+  - installs pip and Setuptools into created virtual environments in Python 3.4 and later by default
+2. virtualenv
+  - needs to be installed separately
+  - supports Python 2.7+ and Python 3.3+
+  - and pip, Setuptools and wheel are always installed into created virtual environments by default
+
+*Using venv*
+Linux: `python3 -m venv <DIR>`
+       `source <DIR>/bin/activate`
+Windows: `py -m venv <DIR>`
+         `<DIR>\Scripts\activate`
+
+*Using virtualenv*
+Linux: `python3 -m virtualenv <DIR>`
+       `source <DIR>/bin/activate`
+Windows: `py -m virtualenv <DIR>`
+         `<DIR>\Scripts\activate`
+
+- Managing multiple virtual environments directly can become tedious, so the dependency management tutorial introduces a higher level tool, Pipenv, 
+  that automatically manages a separate virtual environment for each project and application that you work on. See "dependency management.txt" for details.
