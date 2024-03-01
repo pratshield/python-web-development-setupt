@@ -1,0 +1,4 @@
+It’s important to note that the term “package” in this context is being used to describe a bundle of software to be installed (i.e. as a synonym for a distribution). 
+It does not refer to the kind of package that you import in your Python source code (i.e. a container of modules)
+
+Requirements for Installing Packages
