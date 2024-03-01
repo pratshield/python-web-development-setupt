@@ -1,4 +1,21 @@
 It’s important to note that the term “package” in this context is being used to describe a bundle of software to be installed (i.e. as a synonym for a distribution). 
 It does not refer to the kind of package that you import in your Python source code (i.e. a container of modules)
 
-Requirements for Installing Packages
+**Requirements for Installing Packages**
+
+*Check if python is installed in your system*
+Linux: `python3 --version`
+Windows: `py --version`
+
+*Ensure you can run pip from the command line*
+- If you’re on Linux and installed using your OS package manager, you may have to install pip separately, see "https://packaging.python.org/en/latest/guides/installing-using-linux-tools/"
+Linux: `python3 -m pip --version`
+Windows: `py -m pip --version`
+
+*Ensure pip, setuptools, and wheel are up to date*
+- While pip alone is sufficient to install from pre-built binary archives, up to date copies of the setuptools and wheel projects are useful to ensure you can also install from source archives
+Linux: `python3 -m pip install --upgrade pip setuptools wheel`
+Windows: `py -m pip install --upgrade pip setuptools wheel`
+
+*Optionally, create a virtual environment*
+- See "Creating Virtual environments" for detail 
