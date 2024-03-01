@@ -1,0 +1,37 @@
+**Dependency management**
+
+  Running commands used while creating virtual environments and installing packages can become tedious and very difficult when trying to setup
+  virtual environments automatically for projects with a number of contributors. 
+
+  Pipenv is a dependency manager for Python projects. If you’re familiar with Node.js’ npm or Ruby’s bundler, it is similar in spirit to those tools.
+  While pip alone is often sufficient for personal use, Pipenv is recommended for collaborative projects as it’s a higher-level tool that simplifies 
+  dependency management for common use cases.
+
+  *Installing Pipenv*
+  - Pipenv is a dependency manager for Python projects. If you’re familiar with Node.js’ npm or Ruby’s bundler, it is similar in spirit to those tools.
+    While pip alone is often sufficient for personal use, Pipenv is recommended for collaborative projects as it’s a higher-level tool that simplifies 
+    dependency management for common use cases.
+
+  Linux: `python3 -m pip install --user pipenv`
+
+  *Installing packages for your project*
+
+  `cd <DIR>`
+  `pipenv install <package name>`
+
+  - Pipenv will install the <package name> library and create a Pipfile and pipfile.lock for you in your <DIR> directory. 
+  - The Pipfile is used to track which dependencies your project needs in case you need to re-install them, such as when you share your project with others.
+
+  *Important pipenv commands*
+  - `pipenv lock`: will create/update pipfile.lock file which contains all the dependency packages
+  - `pipenv install --ignore-pipfile`: will install packages from lock file rather than pipfile (used in production)
+  - `pipenv graph`: This command will print out a tree-like structure showing your dependencies
+
+  *Extra features of pipenv*
+  - Pipenv supports the automatic loading of environmental variables when a .env file exists in the top-level directory
+  - You can run a command in the virtual environment without launching a shell `pipenv run <insert command here>`
+  - Check for security vulnerabilities (and PEP 508 requirements) in your environment: `pipenv check`
+
+For more details visit this link "https://realpython.com/pipenv-guide/"
+  
+  
