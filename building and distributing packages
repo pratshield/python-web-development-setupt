@@ -1,0 +1,56 @@
+**Building and Distributing Packages**
+
+  - The first step towards sharing a Python library or program is to build a distribution package
+
+  *Packages in Python*
+    - Packages are a way of structuring Python’s module namespace by using “dotted module names”
+    - The __init__.py files are required to make Python treat directories containing the file as packages
+    - In the simplest case, __init__.py can just be an empty file, but it can also execute initialization code for the package or set the __all__ variable
+    - to restrict users to import all modules from the package, if a package’s __init__.py code defines a list named __all__, it is taken to be the list of
+      module names that should be imported when from package import *, e.g `__all__ = ["echo", "surround", "reverse"]`
+
+  - When creating a Python package, you must provide a `pyproject.toml` file containing a build-system section similar to the example below:
+    [build-system]
+    requires = ["setuptools"]
+    build-backend = "setuptools.build_meta"
+
+  *Build system*
+  Tools like pip and build do not actually convert your sources into a distribution package (like a wheel); that job is performed by a build backend. 
+  The build backend determines how your project will specify its configuration, including metadata (information about the project, for example, the name 
+  and tags that are displayed on PyPI) and input files
+
+  *Common backend build system*
+  - setuptools
+  - Flit
+  - PDM
+  - Hatchling
+
+  Here is the link to configure `pyproject.toml` file to use setuptools backenf build system "https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html"
+
+  Finally, you will need to organize your Python code to make it ready for distributing into something that looks like the following (optional files marked with #):
+  mypackage
+  ├── pyproject.toml  # and/or setup.cfg/setup.py (depending on the configuration method)
+  |   # README.rst or README.md (a nice description of your package)
+  |   # LICENCE (properly chosen license information, e.g. MIT, BSD-3, GPL-3, MPL-2, etc...)
+  └── mypackage
+      ├── __init__.py
+      └── ... (other Python files)
+
+
+**Uploading the distribution package to PyPi**
+  Twine tool is used to upload thedistribution package to Pypi. For more details follow below link:
+  "https://twine.readthedocs.io/en/stable/"
+
+Multiple ways to package Python apps:
+1. Create pip installable package
+2. Use PyInstaller, py2exe etc bundling tools to package Python appas as executables
+3. Use Zipappas or Shiv 
+4. Host as web service
+5. Use containers
+
+For more details follow below links:
+"https://packaging.python.org/en/latest/overview/"
+"https://www.infoworld.com/article/3656628/6-ways-to-package-python-apps-for-re-use.html"
+
+
+
